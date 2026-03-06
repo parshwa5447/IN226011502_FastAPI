@@ -1,34 +1,177 @@
 # FastAPI Assignment 1
 
-This assignment demonstrates building REST APIs using FastAPI.
+## 📌 Project Overview
 
-## Implemented Endpoints
+This project demonstrates the development of a **RESTful API using FastAPI**.
+The API simulates a simple **E-commerce Product Store** where users can view products, filter them by category, search products, and get store insights.
 
-1. **GET /products**
-   - Returns all products with total count.
+The assignment includes multiple endpoints that showcase different API functionalities such as filtering, searching, and summarizing product data.
 
-2. **GET /products/category/{category_name}**
-   - Filters products based on category.
+---
 
-3. **GET /products/instock**
-   - Shows only products that are currently available.
+## ⚙️ Technologies Used
 
-4. **GET /store/summary**
-   - Returns store statistics such as total products, in-stock count, and categories.
+* Python
+* FastAPI
+* Uvicorn
+* REST API
 
-5. **GET /products/search/{keyword}**
-   - Searches products by name (case-insensitive).
+---
 
-6. **GET /products/deals**
-   - Returns cheapest product (best deal) and most expensive product (premium pick).
+## 📂 Project Structure
 
-## Files Included
+```
+YOUR_UNIQUE_INTERNID_FASTAPI
+│
+└── Assignment-1
+    ├── main.py
+    ├── README.md
+    ├── Output Screenshots
+```
 
-- `main.py` → FastAPI application
-- Output screenshots for each endpoint
-- `README.md` → Documentation for the assignment
+---
 
-## How to Run
+## 🚀 How to Run the Project
 
-```bash
+1. Install dependencies
+
+```
+pip install fastapi uvicorn
+```
+
+2. Run the FastAPI server
+
+```
 uvicorn main:app --reload
+```
+
+3. Open the API documentation in browser
+
+```
+http://127.0.0.1:8000/docs
+```
+
+---
+
+## 🔗 API Endpoints
+
+### 1️⃣ Get All Products
+
+```
+GET /products
+```
+
+Returns a list of all products along with the total product count.
+
+---
+
+### 2️⃣ Filter Products by Category
+
+```
+GET /products/category/{category_name}
+```
+
+Returns products that belong to a specific category.
+
+Example:
+
+```
+/products/category/Electronics
+```
+
+---
+
+### 3️⃣ Show Only In-Stock Products
+
+```
+GET /products/instock
+```
+
+Returns only products that are currently available.
+
+---
+
+### 4️⃣ Store Summary
+
+```
+GET /store/summary
+```
+
+Returns store information including:
+
+* Total products
+* In-stock products
+* Out-of-stock products
+* Available categories
+
+---
+
+### 5️⃣ Search Products by Name
+
+```
+GET /products/search/{keyword}
+```
+
+Searches products by keyword in product name (case-insensitive).
+
+Example:
+
+```
+/products/search/mouse
+```
+
+---
+
+### 6️⃣ Cheapest & Most Expensive Product
+
+```
+GET /products/deals
+```
+
+Returns:
+
+* **Best Deal** → Cheapest product
+* **Premium Pick** → Most expensive product
+
+---
+
+## 📊 Example API Output
+
+Example request:
+
+```
+GET /products/deals
+```
+
+Example response:
+
+```
+{
+ "best_deal": {
+   "name": "Notebook",
+   "price": 150
+ },
+ "premium_pick": {
+   "name": "Smartphone",
+   "price": 25000
+ }
+}
+```
+
+---
+
+## 📷 Assignment Output
+
+Screenshots of API responses for each question are included in the **Assignment-1 folder**.
+
+---
+
+## 👨‍💻 Author
+
+**Parshwa Desai**
+
+---
+
+## 📜 License
+
+This project was created for **educational and internship assignment purposes**.
